@@ -1,0 +1,239 @@
+body{
+  background-color: rgb(19, 17, 17);
+  padding: 0;
+  margin: 0;
+}
+.head{
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+.search{
+  /* background-color : gray; */
+  text-align: center;
+  padding: 4px;
+}
+.search input{
+  max-width: 70%;
+  padding: 0.5rem;
+  font-size: 20px;
+  border-style: none;
+  box-shadow: 0px 0px 5px gray;
+  border-radius: 20px 0px 0px 20px;
+}
+.search button{
+  padding: 0.5rem;
+  border-radius: 0px 20px 20px 0px;
+  font-size: 20px;
+  border-style: none;
+  background-color: rgb(30, 30, 31);
+  color: white;
+  cursor: pointer;
+}
+.card-cont{
+  display: flex;
+  /* background-color: red; */
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.card{
+  background-color: rgb(19, 17, 17);
+  /* background-color: green; */
+  max-width: 250px;
+  /* max-height: 530px; */
+  margin: 30px;
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(54, 54, 54);
+}
+.bottom{
+  /* background-color: bisque; */
+  padding: 15px;
+}
+
+.bottom p{
+  /* text-align: center; */
+  /* background-color: red; */
+  margin: 1px 0px;
+}
+
+.card-img img{
+  background-color: white;
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  /* height: 250px; */
+}
+.btn{
+  background-color: rgb(195, 20, 64);
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+  cursor: pointer;
+  border-style: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+.btn:hover{
+  background-color: white;
+  color: brown;
+}
+
+/* previewPage */
+
+.prevCont{
+  /* background-color: lightgray; */
+  padding: 1rem;
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+}
+.prevCont div h1{
+  text-align: center;
+  font-weight: bolder;
+}
+.view{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prevImg{
+  width: 400px;
+  height: 400px;
+  margin-right: 10px;
+}
+a{
+  text-decoration: none;
+  
+}
+
+/* .prevBody{
+  background-color: red;
+  flex:1;
+  padding: 10px;
+  background-color: rgba(8, 7, 7, 0.533);
+  box-shadow: 0px 0px 5px 1px rgb(58, 58, 58);
+  border-radius: 20px;
+} */
+.heading{
+  font-size: 25px;
+  font-weight: 1rem;
+  color: darkgrey;
+}
+.cast{
+  display: flex;
+  color: black;
+  justify-content: space-around;
+  margin: 5px;
+}
+.span{
+  background-color: white;
+  padding: 10px;
+  border-radius: 100%;
+}
+.synopsis{
+  margin-top: 20px;
+}
+.Dbtn{
+  padding: 10px;
+  border-style: none;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 50px 10px 0px 0px;
+
+}
+
+
+
+
+
+/* media Queries */
+
+@media only screen and (max-width: 600px) {
+  .prevCont{
+    /* background-color: lightgray; */
+    padding: 5px;
+    /* width: 100%; */
+    margin: 0 auto;
+    color: white;
+    /* display: none; */
+  }
+  .prevCont div h1{
+    text-align: left;
+    font-weight: none;
+    /* display: none; */
+  }
+  .view{
+    display: inline-block;
+    flex-wrap: wrap;
+    /* display: none; */
+  }
+  
+  .prevImg{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+    /* display: none; */
+  }
+  a{
+    text-decoration: none;
+    /* display: none; */
+  }
+
+  .prevImg img{
+    width: 100%;
+    /* display: none; */
+  }
+  
+  .prevBody{
+    background-color: red;
+    flex:1;
+    padding: 10px;
+    background-color: rgba(8, 7, 7, 0.533);
+    box-shadow: 0px 0px 5px 1px rgb(58, 58, 58);
+    border-radius: 20px;
+    /* display: none; */
+  }
+  .heading{
+    font-size: 18px;
+    font-weight: 1rem;
+    color: darkgrey;
+  }
+  .cast{
+    display: flex;
+    color: black;
+    justify-content: space-around;
+    margin: 2px;
+  }
+  .span{
+    background-color: white;
+    padding: 10px;
+    border-radius: 100%;
+  }
+  .synopsis{
+    margin-top: 20px;
+    width: 100%;
+    /* display: none; */
+  }
+  .Dbtn{
+    padding: 10px;
+    border-style: none;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 50px 10px 0px 0px;
+  
+  }
+  
+}
