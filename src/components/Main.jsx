@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 
-const API_URL = 'http://www.omdbapi.com/?apikey=ef1dc9dd&s=';
+const API_URL = 'https://www.omdbapi.com/?apikey=ef1dc9dd&s=';
 
 function Main() {
     const [users, setUsers] = useState([{}])
