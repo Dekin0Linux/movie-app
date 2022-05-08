@@ -1,59 +1,70 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
 
+import { FaAngleLeft ,FaSave} from 'react-icons/fa';
+
+
+const API_URL = 'https://www.omdbapi.com/?apikey=ef1dc9dd&i=';
 
 function MoviePrev() {
   const {id} = useParams();
+  const [single,setSingle] = useState({})
 
   const history = useNavigate()
+
+  useEffect(()=>{
+    fetch(`${API_URL}${id}`)
+    .then((res)=>{
+      return res.json()
+    })
+    .then((data)=>{
+      setSingle(data)
+
+      console.log(data)
+    })
+  },[])
+
+  
 
 
   return (
     <div className='prevCont'>
+
       <div>
-        <h1>Preview Each movie {id}</h1>
+        <h1>Preview Each movie</h1>
       </div>
         
         <div className='view'>
             <div className='prevImg'>
-                <img src={'https://via.placeholder.com/400'} alt="mov-img" />
+                <img src={single.Poster} alt="mov-img" />
             </div>
             <div className='prevBody'>
-                <h2 className='heading'>Movie title</h2>
-                <h2>Some text in here</h2>
+                <h1 className='heading'>{single.Title}</h1>
+                <h3>Author: {single.Writer}</h3>
+                <hr />
+                <h3>Duartion : {single.Runtime}</h3>
+                <hr />
+                <h3>Actors: {single.Actors}</h3>
+                <hr />
+                <h3>Genre : {single.Genre}</h3>
+                <hr />
+                <h3>Languages : {single.Language}</h3>
 
-                <div className="cast">
-                 <div className='span'>
-                   <div></div>
-                   <p>Name</p>
-                 </div>
-                 <div className='span'>
-                   <div></div>
-                   <p>Name</p>
-                 </div>
-                 <div className='span'>
-                   <div></div>
-                   <p>Name</p>
-                 </div>
-                </div>
-
-
-                <button className='Dbtn'>Download</button>
+                <button className='Dbtn'><FaSave/>Save</button>
                 <button className='Dbtn' style={{backgroundColor:"red"}}>Watch Now</button>
             </div>
         </div>
+        
         <div className='synopsis'>
               <div>
                 <h2>Synopsis</h2>
               </div>
               <div>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta minima ipsam neque quas tempora quibusdam, velit saepe? Repellendus ducimus cumque numquam unde quae nemo dolorem modi dicta laboriosam dolorum, officia fugit aliquam quis maxime, nulla nesciunt, quidem odit consequuntur deleniti! Deserunt aliquam consectetur fuga alias ipsam culpa eum veniam enim vero corrupti itaque voluptatum laborum magni, reiciendis velit quod nisi saepe praesentium, earum ad provident nam. Ab hic velit provident, atque accusantium animi, tempora est, saepe distinctio recusandae molestiae voluptates aliquid at assumenda. Asperiores unde, ut ullam fugit quos tempora dignissimos molestiae quam a autem ab quisquam voluptatum sed laboriosam?
+                {single.Plot}
               </div>
-
             </div>
 
-
-            <button className='Dbtn' onClick={()=>history('/')}>Go Back Home</button>
+            <button className='Dbtn' onClick={()=>history('/')}><FaAngleLeft/></button>
     </div>
   )
 }

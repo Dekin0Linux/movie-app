@@ -12,13 +12,11 @@ function Card({name , categ , poster , year,ID}) {
             <div className='card-img'>
                 <img src={poster != 'N/A' ?poster : 'https://via.placeholder.com/400'} alt="MovieImage" />
             </div>
-
             <div className='bottom'>
                 <p>{name}</p>
                 <p>{year}</p>
                 <p>{categ}</p>
-                <p>{ID}</p>
-                <Link to={`/moviePrev/${ID}`} className='btn' >WATCH</Link>
+                <button className='pBtn'><Link to={`/moviePrev/${ID}`} className='btn' >WATCH</Link></button>  
             </div>
             
         </div>

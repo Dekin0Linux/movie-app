@@ -47,8 +47,16 @@ function Main() {
   
         {loading && <h3 style={{color:'white',textAlign:'center'}}>Loading ... </h3>}
         <div className='card-cont'>
-          {/* {users.map((user)=><Card key={user.id} name={user.title} categ={user.body}/>)} */}
-          {!users ? <h1 style={{color:'white',textAlign:'center'}}>No Movie Found</h1> : users.map((user)=> <Card name={user.Title} key={uuidv4()} ID={user.imdbID} year={user.Year} categ={user.Type} poster={user.Poster}/>)}
+          {!users ? <h1 style={{color:'white',textAlign:'center'}}>No Movie Found</h1> : users.map((user)=> 
+          <Card 
+            name={user.Title} 
+            key={uuidv4()} 
+            ID={user.imdbID} 
+            year={user.Year} 
+            // categ={user.Type} 
+            poster={user.Poster}
+          />)}
+
         </div>
         
       </div>
