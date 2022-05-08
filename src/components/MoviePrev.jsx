@@ -51,7 +51,7 @@ function MoviePrev() {
                 <h3>Languages : {single.Language}</h3>
 
                 <button className='Dbtn'><FaSave/>Save</button>
-                <button className='Dbtn' style={{backgroundColor:"red"}}><Link to={'https://www.youtube.com/watch?v=u31qwQUeGuM'}>Watch Now</Link></button>
+                <button className='Dbtn' style={{backgroundColor:"red"}} onClick={()=>window.location.assign('https://www.youtube.com/watch?v=u31qwQUeGuM')}><Link to={{ }}>Watch Now</Link></button>
             </div>
         </div>
         
