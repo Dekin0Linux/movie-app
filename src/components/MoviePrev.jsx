@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {useParams,useNavigate} from 'react-router-dom'
+import {useParams,useNavigate,Link} from 'react-router-dom'
 
 import { FaAngleLeft ,FaSave} from 'react-icons/fa';
 
@@ -51,7 +51,7 @@ function MoviePrev() {
                 <h3>Languages : {single.Language}</h3>
 
                 <button className='Dbtn'><FaSave/>Save</button>
-                <button className='Dbtn' style={{backgroundColor:"red"}}>Watch Now</button>
+                <button className='Dbtn' style={{backgroundColor:"red"}}><Link to={'https://www.youtube.com/watch?v=u31qwQUeGuM'}>Watch Now</Link></button>
             </div>
         </div>
         
