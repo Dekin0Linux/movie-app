@@ -22,22 +22,16 @@ function MoviePrev() {
 
       console.log(data)
     })
-  },[])
-
-  
-
+  },[id])
 
   return (
     <div className='prevCont'>
-
-      <div>
-        <h1>Preview Each movie</h1>
-      </div>
         
         <div className='view'>
             <div className='prevImg'>
                 <img src={single.Poster} alt="mov-img" />
             </div>
+
             <div className='prevBody'>
                 <h1 className='heading'>{single.Title}</h1>
                 <h3>Author: {single.Writer}</h3>

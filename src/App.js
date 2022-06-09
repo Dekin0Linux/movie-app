@@ -1,5 +1,4 @@
 // import logo from './logo.svg';
-import { useEffect , useState } from 'react';
 import './App.css';
 import Main from './components/Main'; 
 
@@ -11,7 +10,8 @@ import MoviePrev from './components/MoviePrev';
 
 
 
-const API_URL = 'http://www.omdbapi.com/?apikey=ef1dc9dd&s=';
+
+// const API_URL = 'http://www.omdbapi.com/?apikey=ef1dc9dd&s=';
 // const API_URL = "http://localhost:8000/users";
 
 function App(){

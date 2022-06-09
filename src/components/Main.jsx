@@ -3,13 +3,16 @@ import '../App.css';
 import NavBar from './NavBar';
 import Card from './Card';
 import { v4 as uuidv4 } from 'uuid';
+import {Splide,SplideSlide} from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
+
 
 
 
 const API_URL = 'https://www.omdbapi.com/?apikey=ef1dc9dd&s=';
 
 function Main() {
-    const [users, setUsers] = useState([{}])
+    const [users, setUsers] = useState()
     const [title,setTitle] = useState('avengers')
     const [loading,setLoading] = useState(true)
   
@@ -33,7 +36,7 @@ function Main() {
         setUsers(data.Search)
         setLoading(false)
   
-        // console.log(data.Search[0].imdbID)
+        // console.log(data.Search)
       })
     },[title])
   
@@ -42,25 +45,89 @@ function Main() {
   
     return (
       <div className="App">
-        <h2 className='head'>MOVIES APP</h2>
+
+        <div className='hero'>
+
+        
+        <h2 className='App-name'>Movie Land</h2>
         <NavBar movtitle = {movTitle}/>
   
         {loading && <h3 style={{color:'white',textAlign:'center'}}>Loading ... </h3>}
-        <div className='card-cont'>
-          {!users ? <h1 style={{color:'white',textAlign:'center'}}>No Movie Found</h1> : users.map((user)=> 
-          <Card 
-            name={user.Title} 
-            key={uuidv4()} 
-            ID={user.imdbID} 
-            year={user.Year} 
-            // categ={user.Type} 
-            poster={user.Poster}
-          />)}
-
-        </div>
         
-      </div>
-    );
-}
+        </div>
+        {/* end of hero */}
+        <h2 className='genre'>New Release</h2>
+        <Splide className='main-card'
+          options={{
+            gap:'1rem',
+            arrows: false,
+            perPage: 5,
+            autoWidth: true,
+            start:3
+          }}
+        
+        >
 
+        {!users ? <h1 style={{color:'white',textAlign:'center'}}>No Movie Found</h1> : users.map(user=> (
+          <SplideSlide >
+            <Card
+             Key={uuidv4}
+             poster={user.Poster}
+             ID={user.imdbID}
+            
+            />
+          </SplideSlide>
+
+      )
+            
+          )}
+
+        </Splide>
+
+
+        {/* second slide */}
+        <h2 className='genre'>Action</h2>
+        <Splide className='main-card'
+          options={{
+            gap:'1rem',
+            arrows: false,
+            perPage: 8,
+            autoWidth: true,
+            start: 6,
+            arrows: true
+          }}
+        
+        >
+        
+
+        {!users ? <h1 style={{color:'white',textAlign:'center'}}></h1> : users.map(user=> (
+          <SplideSlide >
+            <Card
+             Key={uuidv4}
+             poster={user.Poster}
+             ID={user.imdbID}
+            
+            />
+          </SplideSlide>
+
+      )
+            
+          )}
+
+        </Splide>
+
+
+        
+
+        
+          
+              
+
+
+
+
+      </div>
+      
+      
+    )}
 export default Main;
