@@ -12,6 +12,7 @@ import '@splidejs/react-splide/css';
 const API_URL = 'https://www.omdbapi.com/?apikey=ef1dc9dd&s=';
 
 function Main() {
+  
     const [users, setUsers] = useState()
     const [title,setTitle] = useState('avengers')
     const [loading,setLoading] = useState(true)
